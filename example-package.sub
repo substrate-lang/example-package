@@ -1,0 +1,11 @@
+(provide banner)
+
+(define (rule [width u32])
+  (printf "+")
+  (for ([i u32 0]) (< i width) (+= i 1) (printf "-"))
+  (printf "+\n"))
+
+(define (banner [text string])
+  (rule (+ (-> text length) 2))
+  (printf "| ~a |\n" text)
+  (rule (+ (-> text length) 2)))
